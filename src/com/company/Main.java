@@ -62,7 +62,6 @@ public class Main {
         char result = alfabet[number];
         return result;
     }
-
     public static int[] textToListOfNumbers(String text) {
         int[] resultat = new int[text.length()];
         for (int i = 0; i < text.length(); i++){
@@ -118,6 +117,16 @@ public class Main {
         }
         return listOfNumbers;
     }
+    public static int shiftNumberNegativt( int number, int shift){
+        if (number == 0){
+            return number;
+        }
+        int shiftedNumber = number + shift;
+        if (shiftedNumber <= 0) {
+            shiftedNumber = shiftedNumber + 29;
+        }
+        return shiftedNumber;
+    }
     public static int shiftNumber(int number, int shift) {
         if(number == 0){
             return number;
@@ -126,8 +135,11 @@ public class Main {
         int shiftedNumber = number + shift;
         if(shiftedNumber > 29){
             shiftedNumber = shiftedNumber - 29;
+        }
+        if (shiftedNumber <= 0) {
+            shiftedNumber = shiftedNumber + 29;
+        }
 
-    }
     return shiftedNumber;
 
     }
